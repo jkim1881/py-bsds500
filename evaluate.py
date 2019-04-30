@@ -8,27 +8,34 @@ from skimage.util import img_as_float
 from skimage.color import rgb2grey
 from skimage.io import imread
 
+# parser = argparse.ArgumentParser(description='Test output')
+# parser.add_argument('bsds_path', type=str,
+#                     help='the root path of the BSDS-500 dataset')
+# parser.add_argument('pred_path', type=str,
+#                     help='the root path of the predictions')
+# parser.add_argument('val_test', type=str,
+#                     help='val or test')
+# parser.add_argument('thresholds', type=str, default='5',
+#                     help='the number of thresholds')
+# parser.add_argument('suffix_ext', type=str,
+#                     help='suffix and extension')
+#
+# args = parser.parse_args()
 
-parser = argparse.ArgumentParser(description='Test output')
-parser.add_argument('bsds_path', type=str,
-                    help='the root path of the BSDS-500 dataset')
-parser.add_argument('pred_path', type=str,
-                    help='the root path of the predictions')
-parser.add_argument('val_test', type=str,
-                    help='val or test')
-parser.add_argument('thresholds', type=str, default='5',
-                    help='the number of thresholds')
-parser.add_argument('suffix_ext', type=str,
-                    help='suffix and extension')
+# bsds_path = args.bsds_path
+# pred_path = args.pred_path
+# val_test = args.val_test
+# suffix_ext = args.suffix_ext
+# thresholds = args.thresholds
+# thresholds = thresholds.strip()
 
-args = parser.parse_args()
+zero_as_edges = True
+bsds_path = '/media/data_cifs/cluster_projects/BSDS500'
+pred_path = '/media/data_cifs/pytorch_projects/model_out'
+val_test = 'test'
+suffix_ext = '.jpg'
+thresholds = 16
 
-bsds_path = args.bsds_path
-pred_path = args.pred_path
-val_test = args.val_test
-suffix_ext = args.suffix_ext
-thresholds = args.thresholds
-thresholds = thresholds.strip()
 try:
     n_thresholds = int(thresholds)
     thresholds = n_thresholds
@@ -67,7 +74,8 @@ def load_pred(sample_name):
     return pred
 
 sample_results, threshold_results, overall_result = evaluate_boundaries.pr_evaluation(
-    thresholds, SAMPLE_NAMES, load_gt_boundaries, load_pred, progress=tqdm.tqdm
+    thresholds, SAMPLE_NAMES, load_gt_boundaries, load_pred,
+    zero_as_edges=zero_as_edges, progress=tqdm.tqdm,
 )
 
 print('Per image:')
