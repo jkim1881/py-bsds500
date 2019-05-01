@@ -31,7 +31,7 @@ from skimage.io import imread
 
 zero_as_edges = True
 bsds_path = '/media/data_cifs/cluster_projects/BSDS500'
-pred_path = '/media/data_cifs/pytorch_projects/model_out_f'
+pred_path = '/media/data_cifs/pytorch_projects/model_out'
 val_test = 'test'
 suffix_ext = '.jpg'
 thresholds = 3
