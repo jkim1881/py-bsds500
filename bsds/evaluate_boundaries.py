@@ -241,6 +241,7 @@ def pr_evaluation(thresholds, sample_names, load_gt_boundaries, load_pred,
         pred = load_pred(sample_name)
         if zero_as_edges:
             pred = 255-pred
+            import ipdb;ipdb.set_trace()
         gt_b = load_gt_boundaries(sample_name)
 
         # Evaluate predictions
