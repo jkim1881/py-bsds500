@@ -2,7 +2,7 @@ import os, argparse, sys
 
 import tqdm
 import numpy as np
-from bsds.bsds_dataset import BSDSDataset, MulticueDataset
+from bsds.bsds_dataset import BSDSDataset
 from bsds import evaluate_boundaries
 from skimage.util import img_as_float
 from skimage.color import rgb2grey
@@ -32,7 +32,7 @@ from skimage.io import imread
 zero_as_edges = True
 bsds_or_multicue = 'multicue'
 bsds_path = '/media/data_cifs/cluster_projects/BSDS500'
-pred_path = '/media/data_cifs/pytorch_projects/model_out_001'
+pred_path = '/media/data_cifs/pytorch_projects/model_out'
 val_test = 'test'
 suffix_ext = '.jpg'
 thresholds = 16
