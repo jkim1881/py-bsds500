@@ -30,7 +30,7 @@ from skimage.io import imread
 # thresholds = thresholds.strip()
 
 zero_as_edges = True
-bsds_or_multicue = 'multicue'
+bsds_or_multicue = 'bsds'
 bsds_path = '/media/data_cifs/cluster_projects/BSDS500'
 pred_path = '/media/data_cifs/pytorch_projects/model_out'
 val_test = 'test'
