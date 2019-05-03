@@ -245,6 +245,7 @@ def pr_evaluation(thresholds, sample_names, load_gt_boundaries, load_pred,
         if nms:
             gim = gaussian_filter.gaussian(pred)
             grim, gphase = gradient.gradient(gim)
+            import ipdb;ipdb.set_trace()
             pred = nonmax_suppression.maximum(grim, gphase)
         gt_b = load_gt_boundaries(sample_name)
 

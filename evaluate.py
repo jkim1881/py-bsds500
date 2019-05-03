@@ -31,9 +31,9 @@ from skimage.io import imread
 
 zero_as_edges = True
 do_nms = True
-bsds_or_multicue = 'multicue-edges'
-bsds_path = '/media/data_cifs/pytorch_projects/datasets' #'/media/data_cifs/cluster_projects/BSDS500'
-pred_path = '/media/data_cifs/pytorch_projects/ME_model_out_001'
+bsds_or_multicue = 'bsds' #'multicue-edges'
+bsds_path = '/media/data_cifs/cluster_projects/BSDS500' # '/media/data_cifs/pytorch_projects/datasets' #'/media/data_cifs/cluster_projects/BSDS500'
+pred_path = '/media/data_cifs/pytorch_projects/model_out' # '/media/data_cifs/pytorch_projects/ME_model_out_001'
 val_test = 'test'
 suffix_ext = '.jpg'
 thresholds = 16
