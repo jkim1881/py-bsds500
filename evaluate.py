@@ -2,7 +2,7 @@ import os, argparse, sys
 
 import tqdm
 import numpy as np
-from bsds.bsds_dataset import BSDSDataset
+from bsds.bsds_dataset import BSDSDataset, MulticueDataset
 from bsds import evaluate_boundaries
 from skimage.util import img_as_float
 from skimage.color import rgb2grey
@@ -30,6 +30,7 @@ from skimage.io import imread
 # thresholds = thresholds.strip()
 
 zero_as_edges = True
+bsds_or_multicue = 'multicue'
 bsds_path = '/media/data_cifs/cluster_projects/BSDS500'
 pred_path = '/media/data_cifs/pytorch_projects/model_out_001'
 val_test = 'test'
@@ -57,8 +58,8 @@ except ValueError:
         print('Bad threshold format; should be a python list of ints (`[a, b, c]`)')
         sys.exit()
 
-ds = BSDSDataset(bsds_path)
 
+ds = BSDSDataset(bsds_path, bsds_or_multicue)
 if val_test == 'val':
     SAMPLE_NAMES = ds.val_sample_names
 elif val_test == 'test':
@@ -67,8 +68,10 @@ else:
     print('need to specify either val or test, not {}'.format(val_test))
     sys.exit()
 
+
 def load_gt_boundaries(sample_name):
     return ds.boundaries(sample_name)
+
 
 def load_pred(sample_name):
     sample_path = os.path.join(pred_path, '{}{}'.format(sample_name, suffix_ext))
@@ -79,10 +82,12 @@ def load_pred(sample_name):
     pred = np.pad(pred, [(0, tgt_shape[0]-pred.shape[0]), (0, tgt_shape[1]-pred.shape[1])], mode='constant')
     return pred
 
+
 sample_results, threshold_results, overall_result = evaluate_boundaries.pr_evaluation(
     thresholds, SAMPLE_NAMES, load_gt_boundaries, load_pred,
-    zero_as_edges=zero_as_edges, progress=tqdm.tqdm,
+    zero_as_edges=zero_as_edges, progress=tqdm.tqdm, nms=True,
 )
+
 
 print('Per image:')
 for sample_index, res in enumerate(sample_results):
@@ -95,6 +100,7 @@ print('Per threshold:')
 for thresh_i, res in enumerate(threshold_results):
     print('{:<10.6f} {:<10.6f} {:<10.6f} {:<10.6f}'.format(
         res.threshold, res.recall, res.precision, res.f1))
+
 
 print('')
 print('Summary:')

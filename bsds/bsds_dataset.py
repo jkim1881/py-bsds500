@@ -7,7 +7,7 @@ from skimage.io import imread
 from scipy.io import loadmat
 
 
-class BSDSDataset (object):
+class BSDSDataset(object):
     """
     BSDS dataset wrapper
 
@@ -24,20 +24,35 @@ class BSDSDataset (object):
     val_sample_names - a list of names of validation images
     test_sample_names - a list of names of test images
     """
-    def __init__(self, bsds_path):
+    def __init__(self, bsds_path, bsds_or_multicue='bsds'):
         """
         Constructor
 
         :param bsds_path: the path to the root of the BSDS dataset
         """
-        self.bsds_path = bsds_path
-        self.data_path = os.path.join(bsds_path, 'BSDS500', 'data')
-        self.images_path = os.path.join(self.data_path, 'images')
-        self.gt_path = os.path.join(self.data_path, 'groundTruth')
+        self.bsds_or_multicue = bsds_or_multicue
 
-        self.train_sample_names = self._sample_names(self.images_path, 'train')
-        self.val_sample_names = self._sample_names(self.images_path, 'val')
-        self.test_sample_names = self._sample_names(self.images_path, 'test')
+        if self.bsds_or_multicue is 'bsds':
+            self.bsds_path = bsds_path
+            self.data_path = os.path.join(bsds_path, 'BSDS500', 'data')
+            self.images_path = os.path.join(self.data_path, 'images')
+            self.gt_path = os.path.join(self.data_path, 'groundTruth')
+
+            self.train_sample_names = self._sample_names(self.images_path, 'train')
+            self.val_sample_names = self._sample_names(self.images_path, 'val')
+            self.test_sample_names = self._sample_names(self.images_path, 'test')
+        elif 'multicue-' in self.bsds_or_multicue:
+            self.bsds_path = bsds_path
+            self.data_path = os.path.join(bsds_path, 'Multicue_crops', 'data')
+            self.images_path = os.path.join(self.data_path, 'images')
+            self.gt_path = os.path.join(bsds_path, 'Multicue', 'multicue', 'ground-truth', 'images')
+
+            self.train_sample_names = self._sample_names(self.images_path, 'train')
+            self.val_sample_names = self._sample_names(self.images_path, 'val')
+            self.test_sample_names = self._sample_names(self.images_path, 'test_nocrop')
+        else:
+            raise NotImplementedError('bsds_or_multicue should be bsds or multicue-XXXX')
+
 
     @staticmethod
     def _sample_names(dir, subset):
@@ -105,8 +120,13 @@ class BSDSDataset (object):
         :return: a list of (H,W) arrays, each of which contains a
         boundary ground truth
         """
-        path = os.path.join(self.gt_path, name + '.mat')
-        return self.load_boundaries(path)
+        if self.bsds_or_multicue is 'bsds':
+            path = os.path.join(self.gt_path, name + '.mat')
+        elif '-edges' in self.bsds_or_multicue:
+            path = os.path.join(self.gt_path, 'edges', name)
+        elif '-boundaries' in self.bsds_or_multicue:
+            path = os.path.join(self.gt_path, 'boundaries', name)
+        return self.load_boundaries(path, bsds_or_multicue=self.bsds_or_multicue)
 
     @staticmethod
     def load_ground_truth_mat(path):
@@ -133,7 +153,7 @@ class BSDSDataset (object):
         return [gt[0,i]['Segmentation'][0,0].astype(np.int32) for i in range(num_gts)]
 
     @staticmethod
-    def load_boundaries(path):
+    def load_boundaries(path, bsds_or_multicue='bsds'):
         """
         Load the ground truth boundaries from the Matlab file
         at the specified path.
@@ -141,9 +161,19 @@ class BSDSDataset (object):
         :return: a list of (H,W) arrays, each of which contains a
         boundary ground truth
         """
-        gt = BSDSDataset.load_ground_truth_mat(path)
-        num_gts = gt.shape[1]
-        return [gt[0,i]['Boundaries'][0,0] for i in range(num_gts)]
+        if bsds_or_multicue is 'bsds':
+            gt = BSDSDataset.load_ground_truth_mat(path)
+            num_gts = gt.shape[1]
+            return [gt[0,i]['Boundaries'][0,0] for i in range(num_gts)]
+        elif 'multicue-' in bsds_or_multicue:
+            directory, filename = os.path.split(path)
+            files = [os.path.join(directory, f)
+                     for f in os.listdir(directory)
+                     if filename in f]
+            return [np.load(file) for file in files]
+        else:
+            raise NotImplementedError('bsds_or_multicue should be bsds or multicue-XXXX')
+
 
 
 class BSDSHEDAugDataset (object):

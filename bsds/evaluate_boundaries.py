@@ -1,7 +1,7 @@
 from collections import namedtuple
 import numpy as np
 from . import thin, correspond_pixels
-
+from canny_edge import gradient, gaussian_filter, nonmax_suppression
 
 def evaluate_boundaries_bin(predicted_boundaries_bin, gt_boundaries,
                             max_dist=0.0075, apply_thinning=True):
@@ -162,7 +162,7 @@ OverallResult = namedtuple('OverallResult', ['threshold', 'recall',
                                              'best_f1', 'area_pr'])
 
 def pr_evaluation(thresholds, sample_names, load_gt_boundaries, load_pred,
-                  zero_as_edges=False, progress=None):
+                  zero_as_edges=False, progress=None, nms=False):
     """
     Perform an evaluation of predictions against ground truths for an image
     set over a given set of thresholds.
@@ -242,6 +242,10 @@ def pr_evaluation(thresholds, sample_names, load_gt_boundaries, load_pred,
         if zero_as_edges:
             pred = 1-pred
             # import ipdb;ipdb.set_trace()
+        if nms:
+            gim = gaussian_filter.gaussian(pred)
+            grim, gphase = gradient.gradient(gim)
+            pred = nonmax_suppression.maximum(grim, gphase)
         gt_b = load_gt_boundaries(sample_name)
 
         # Evaluate predictions
