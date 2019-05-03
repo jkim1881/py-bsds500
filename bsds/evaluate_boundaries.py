@@ -115,7 +115,7 @@ def evaluate_boundaries(predicted_boundaries, gt_boundaries,
                 predicted_boundaries_bin)
 
         for gt in gt_boundaries:
-            gt[gt >= 1] = 1
+            gt[gt >= 1] = 1 # to handle multicue gt data (65535)
             match1, match2, cost, oc = correspond_pixels.correspond_pixels(
                 predicted_boundaries_bin, gt, max_dist=max_dist
             )
