@@ -165,12 +165,11 @@ class BSDSDataset(object):
             num_gts = gt.shape[1]
             return [gt[0,i]['Boundaries'][0,0] for i in range(num_gts)]
         elif 'multicue-' in bsds_or_multicue:
-            import ipdb;ipdb.set_trace()
             directory, filename = os.path.split(path)
             files = [os.path.join(directory, f)
                      for f in os.listdir(directory)
                      if filename in f]
-            return [np.load(file) for file in files]
+            return [imread(file) for file in files]
         else:
             raise NotImplementedError('bsds_or_multicue should be bsds or multicue-XXXX')
 
