@@ -47,7 +47,7 @@ class BSDSDataset(object):
             self.gt_path = os.path.join(bsds_path, 'Multicue', 'multicue', 'ground-truth', 'images')
 
             self.train_sample_names = self._sample_names(self.images_path, 'train')
-            self.val_sample_names = self._sample_names(self.images_path, 'val')
+            self.val_sample_names = self._sample_names(self.images_path, 'test')
             self.test_sample_names = self._sample_names(self.images_path, 'test_nocrop')
         else:
             raise NotImplementedError('bsds_or_multicue should be bsds or multicue-XXXX')
