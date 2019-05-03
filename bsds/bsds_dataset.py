@@ -122,9 +122,9 @@ class BSDSDataset(object):
         if self.bsds_or_multicue is 'bsds':
             path = os.path.join(self.gt_path, name + '.mat')
         elif '-edges' in self.bsds_or_multicue:
-            path = os.path.join(self.gt_path, 'edges')
+            path = os.path.join(self.gt_path, 'edges', name)
         elif '-boundaries' in self.bsds_or_multicue:
-            path = os.path.join(self.gt_path, 'boundaries')
+            path = os.path.join(self.gt_path, 'boundaries', name)
         return self.load_boundaries(path, bsds_or_multicue=self.bsds_or_multicue)
 
     @staticmethod
