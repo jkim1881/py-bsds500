@@ -30,13 +30,13 @@ from skimage.io import imread
 # thresholds = thresholds.strip()
 
 zero_as_edges = True
-do_nms = True
+do_nms = False #(doesnt work)
 bsds_or_multicue = 'bsds' #'multicue-edges'
 bsds_path = '/media/data_cifs/cluster_projects/BSDS500' # '/media/data_cifs/pytorch_projects/datasets' #'/media/data_cifs/cluster_projects/BSDS500'
 pred_path = '/media/data_cifs/pytorch_projects/model_out' # '/media/data_cifs/pytorch_projects/ME_model_out_001'
 val_test = 'test'
 suffix_ext = '.jpg'
-thresholds = 16
+thresholds = 20
 
 #   0.166667   0.266960   0.311561   0.287541
 #   0.333333   0.212023   0.272658   0.238548
