@@ -31,7 +31,7 @@ class BSDSDataset(object):
         :param bsds_path: the path to the root of the BSDS dataset
         """
         self.bsds_or_multicue = bsds_or_multicue
-
+        import ipdb;ipdb.set_trace()
         if self.bsds_or_multicue is 'bsds':
             self.bsds_path = bsds_path
             self.data_path = os.path.join(bsds_path, 'BSDS500', 'data')
