@@ -32,7 +32,7 @@ from skimage.io import imread
 zero_as_edges = True
 do_nms = True #(doesnt work)
 bsds_or_multicue = 'multicue-boundaries' #'multicue-boundaries' #'bsds'
-bsds_path = '/media/data_cifs/cluster_projects/BSDS500'# '/media/data_cifs/pytorch_projects/datasets' #'/media/data_cifs/cluster_projects/BSDS500'
+bsds_path = '/media/data_cifs/pytorch_projects/datasets'# '/media/data_cifs/pytorch_projects/datasets' #'/media/data_cifs/cluster_projects/BSDS500'
 pred_path = '/media/data_cifs/pytorch_projects/MB_model_out_1' #'/media/data_cifs/pytorch_projects/MB_model_out_001' # '/media/data_cifs/pytorch_projects/model_out_001'
 val_test = 'test'
 suffix_ext = '.jpg'
