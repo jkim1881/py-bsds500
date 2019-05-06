@@ -36,7 +36,7 @@ bsds_path = '/media/data_cifs/cluster_projects/BSDS500'# '/media/data_cifs/pytor
 pred_path = '/media/data_cifs/pytorch_projects/model_out' #'/media/data_cifs/pytorch_projects/MB_model_out_001' # '/media/data_cifs/pytorch_projects/model_out_001'
 val_test = 'test'
 suffix_ext = '.jpg'
-thresholds = '[0.047619, 0.380952, 0.809524]' #20
+thresholds = 2
 
 #   0.166667   0.266960   0.311561   0.287541
 #   0.333333   0.212023   0.272658   0.238548
@@ -98,12 +98,26 @@ for sample_index, res in enumerate(sample_results):
 
 print('')
 print('Per threshold:')
-for thresh_i, res in enumerate(threshold_results):
-    print('{:<10.6f} {:<10.6f} {:<10.6f} {:<10.6f}'.format(
-        res.threshold, res.recall, res.precision, res.f1))
+print('Threshold')
+str = ''
+for _, res in enumerate(threshold_results):
+    str += '{:<10.6f}'.format(res.threshold)
+print(str)
+str = ''
+print('Precision')
+for _, res in enumerate(threshold_results):
+    str += '{:<10.6f}'.format(res.precision)
+print(str)
+str = ''
+print('Recall')
+for _, res in enumerate(threshold_results):
+    str += '{:<10.6f}'.format(res.recall)
+print(str)
+str = ''
+print('F1')
+for _, res in enumerate(threshold_results):
+    str += '{:<10.6f}'.format(res.f1)
 
-
-print('')
 print('Summary:')
 print('{:<10.6f} {:<10.6f} {:<10.6f} {:<10.6f} {:<10.6f} {:<10.6f} {:<10.6f} {:<10.6f}'.format(
     overall_result.threshold, overall_result.recall, overall_result.precision, overall_result.f1,
