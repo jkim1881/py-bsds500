@@ -101,22 +101,23 @@ print('Per threshold:')
 print('Threshold')
 str = ''
 for _, res in enumerate(threshold_results):
-    str += '{:<10.6f}'.format(res.threshold)
+    str += '{:<10.6f}'.format(res.threshold) + ','
 print(str)
 str = ''
 print('Precision')
 for _, res in enumerate(threshold_results):
-    str += '{:<10.6f}'.format(res.precision)
+    str += '{:<10.6f}'.format(res.precision) + ','
 print(str)
 str = ''
 print('Recall')
 for _, res in enumerate(threshold_results):
-    str += '{:<10.6f}'.format(res.recall)
+    str += '{:<10.6f}'.format(res.recall) + ','
 print(str)
 str = ''
 print('F1')
 for _, res in enumerate(threshold_results):
-    str += '{:<10.6f}'.format(res.f1)
+    str += '{:<10.6f}'.format(res.f1) + ','
+print(str)
 
 print('Summary:')
 print('{:<10.6f} {:<10.6f} {:<10.6f} {:<10.6f} {:<10.6f} {:<10.6f} {:<10.6f} {:<10.6f}'.format(
