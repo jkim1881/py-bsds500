@@ -36,7 +36,7 @@ bsds_path = '/media/data_cifs/cluster_projects/BSDS500'# '/media/data_cifs/pytor
 pred_path = '/media/data_cifs/pytorch_projects/model_out' #'/media/data_cifs/pytorch_projects/MB_model_out_001' # '/media/data_cifs/pytorch_projects/model_out_001'
 val_test = 'test'
 suffix_ext = '.jpg'
-thresholds = 2
+thresholds = 1
 
 #   0.166667   0.266960   0.311561   0.287541
 #   0.333333   0.212023   0.272658   0.238548
