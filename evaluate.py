@@ -32,18 +32,13 @@ from skimage.io import imread
 zero_as_edges = True
 do_nms = True
 do_thinning = True
-bsds_or_multicue = 'multicue-edges' #'multicue-boundaries' #'bsds'
-bsds_path = '/media/data_cifs/pytorch_projects/datasets'# '/media/data_cifs/pytorch_projects/datasets' #'/media/data_cifs/cluster_projects/BSDS500'
-pred_path = '/media/data_cifs/pytorch_projects/ME_model_out_001' #'/media/data_cifs/pytorch_projects/MB_model_out_001' # '/media/data_cifs/pytorch_projects/model_out_001'
+bsds_or_multicue = 'bsds' #'multicue-boundaries' #'bsds'
+bsds_path = '/media/data_cifs/pytorch_projects/BSDS500'# '/media/data_cifs/pytorch_projects/datasets' #'/media/data_cifs/cluster_projects/BSDS500'
+pred_path = '/media/data_cifs/pytorch_projects/model_out' #'/media/data_cifs/pytorch_projects/MB_model_out_001' # '/media/data_cifs/pytorch_projects/model_out_001'
 val_test = 'test'
 suffix_ext = '.jpg'
-thresholds = 40
+thresholds = 5
 
-#   0.166667   0.266960   0.311561   0.287541
-#   0.333333   0.212023   0.272658   0.238548
-#   0.500000   0.171090   0.240267   0.199862
-#   0.666667   0.130539   0.205129   0.159546
-#   0.833333   0.087933   0.160323   0.113574
 
 try:
     n_thresholds = int(thresholds)
