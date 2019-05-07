@@ -37,7 +37,7 @@ bsds_path = '/media/data_cifs/pytorch_projects/datasets'# '/media/data_cifs/pyto
 pred_path = '/media/data_cifs/pytorch_projects/model_out' #'/media/data_cifs/pytorch_projects/MB_model_out_001' # '/media/data_cifs/pytorch_projects/model_out_001'
 val_test = 'test'
 suffix_ext = '.jpg'
-thresholds = 5
+thresholds = 10
 
 
 try:
