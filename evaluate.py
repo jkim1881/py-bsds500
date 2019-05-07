@@ -30,7 +30,8 @@ from skimage.io import imread
 # thresholds = thresholds.strip()
 
 zero_as_edges = True
-do_nms = True #(doesnt work)
+do_nms = True
+do_thinning = True
 bsds_or_multicue = 'multicue-edges' #'multicue-boundaries' #'bsds'
 bsds_path = '/media/data_cifs/pytorch_projects/datasets'# '/media/data_cifs/pytorch_projects/datasets' #'/media/data_cifs/cluster_projects/BSDS500'
 pred_path = '/media/data_cifs/pytorch_projects/ME_model_out_001' #'/media/data_cifs/pytorch_projects/MB_model_out_001' # '/media/data_cifs/pytorch_projects/model_out_001'
@@ -86,7 +87,7 @@ def load_pred(sample_name):
 
 sample_results, threshold_results, overall_result = evaluate_boundaries.pr_evaluation(
     thresholds, SAMPLE_NAMES, load_gt_boundaries, load_pred,
-    zero_as_edges=zero_as_edges, progress=tqdm.tqdm, nms=do_nms,
+    zero_as_edges=zero_as_edges, progress=tqdm.tqdm, nms=do_nms, thinning=do_thinning
 )
 
 

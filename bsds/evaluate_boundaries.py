@@ -162,7 +162,7 @@ OverallResult = namedtuple('OverallResult', ['threshold', 'recall',
                                              'best_f1', 'area_pr'])
 
 def pr_evaluation(thresholds, sample_names, load_gt_boundaries, load_pred,
-                  zero_as_edges=False, progress=None, nms=False):
+                  zero_as_edges=False, progress=None, nms=False, thinning=True):
     """
     Perform an evaluation of predictions against ground truths for an image
     set over a given set of thresholds.
@@ -250,7 +250,7 @@ def pr_evaluation(thresholds, sample_names, load_gt_boundaries, load_pred,
         # Evaluate predictions
         count_r, sum_r, count_p, sum_p, used_thresholds = \
             evaluate_boundaries(pred, gt_b, thresholds=thresholds,
-                                apply_thinning=(not nms))
+                                apply_thinning=thinning)
 
         count_r_overall += count_r
         sum_r_overall += sum_r
