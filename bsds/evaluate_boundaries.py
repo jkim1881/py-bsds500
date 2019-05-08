@@ -246,7 +246,6 @@ def pr_evaluation(thresholds, sample_names, load_gt_boundaries, load_pred,
             grim, gphase = gradient.gradient(pred)
             pred_nms = nonmax_suppression.maximum(grim, gphase)
             pred_nms /= np.max(pred_nms) # range correction
-            import matplotlib.pyplot as plt;plt.subplot(131);plt.imshow(pred);plt.subplot(132);plt.imshow(pred_nms);plt.subplot(133);plt.imshow(load_gt_boundaries(sample_name)[0]);plt.show()
             pred = pred_nms
         gt_b = load_gt_boundaries(sample_name)
 
