@@ -243,6 +243,7 @@ def pr_evaluation(thresholds, sample_names, load_gt_boundaries, load_pred,
             pred = 1-pred
             # import ipdb;ipdb.set_trace()
         if nms:
+            import ipdb;import matplotlib.pyplot as plt;ipdb.set_trace()
             grim, gphase = gradient.gradient(pred)
             pred = nonmax_suppression.maximum(grim, gphase)
         gt_b = load_gt_boundaries(sample_name)
