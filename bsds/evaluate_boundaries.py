@@ -246,11 +246,10 @@ def pr_evaluation(thresholds, sample_names, load_gt_boundaries, load_pred,
             grim, gphase = gradient.gradient(pred)
             pred = nonmax_suppression.maximum(grim, gphase)
         gt_b = load_gt_boundaries(sample_name)
-        import ipdb;ipdb.set_trace()
-        # Evaluate predictions
 
-        import matplotlib.pyplot as plt
-        plt.subplot(121);plt.imshow(pred);plt.subplot(122);plt.imshow(gt_b);plt.show()
+        # import matplotlib.pyplot as plt
+        # plt.subplot(121);plt.imshow(pred);plt.subplot(122);plt.imshow(gt_b[0]);plt.show()
+        # import ipdb;ipdb.set_trace()
 
         count_r, sum_r, count_p, sum_p, used_thresholds = \
             evaluate_boundaries(pred, gt_b, thresholds=thresholds,
