@@ -17,8 +17,8 @@
       <file leaf-file-name="evaluate.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/evaluate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="992">
-              <caret line="86" column="9" lean-forward="true" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
+            <state relative-caret-position="347">
+              <caret line="43" column="84" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="84" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -91,8 +91,8 @@
         <option value="$PROJECT_DIR$/canny_edge/nonmax_suppression.py" />
         <option value="$PROJECT_DIR$/bsds/bsds_dataset.py" />
         <option value="$PROJECT_DIR$/plot_results.py" />
-        <option value="$PROJECT_DIR$/evaluate.py" />
         <option value="$PROJECT_DIR$/bsds/evaluate_boundaries.py" />
+        <option value="$PROJECT_DIR$/evaluate.py" />
       </list>
     </option>
   </component>
@@ -528,8 +528,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/evaluate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="992">
-          <caret line="86" column="9" lean-forward="true" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
+        <state relative-caret-position="347">
+          <caret line="43" column="84" lean-forward="true" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="84" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
