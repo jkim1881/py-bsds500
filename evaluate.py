@@ -81,7 +81,7 @@ def load_pred(sample_name):
     sample_path = os.path.join(pred_path, '{}{}'.format(sample_name, suffix_ext))
     if 'bsds_for_jk' in sample_path:
         pred = np.load(sample_path)
-        import matplotlib.pyplot as plt;plt.imshow(pred);plt.show()
+        # import matplotlib.pyplot as plt;plt.imshow(pred);plt.show()
         print('max='+str(np.max(pred))+', min='+str(np.min(pred)))
         pred *= 255
     else:
