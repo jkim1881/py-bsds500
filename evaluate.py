@@ -79,9 +79,8 @@ def load_gt_boundaries(sample_name):
 
 def load_pred(sample_name):
     sample_path = os.path.join(pred_path, '{}{}'.format(sample_name, suffix_ext))
-    import ipdb;ipdb.set_trace()
     if 'bsds_for_jk' in sample_path:
-        pred = imread(sample_path) #np.load(sample_path)
+        pred = np.load(sample_path)
         import matplotlib.pyplot as plt;plt.imshow(pred);plt.show()
         print('max='+str(np.max(pred))+', min='+str(np.min(pred)))
         pred *= 255
