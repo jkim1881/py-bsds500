@@ -41,7 +41,7 @@ do_thinning = True
 
 bsds_or_multicue = 'bsds' #'multicue-boundaries' #'bsds'
 bsds_path = '/media/data_cifs/pytorch_projects/datasets'
-pred_path = '/media/data_cifs/cluster_projects/refactor_gammanet/bsds_for_jk/100_255'
+pred_path = '/media/data_cifs/cluster_projects/refactor_gammanet/bsds_for_jk/100'
 val_test = 'test'
 suffix_ext = '.tiff'
 thresholds = 100
@@ -79,8 +79,12 @@ def load_gt_boundaries(sample_name):
 
 def load_pred(sample_name):
     sample_path = os.path.join(pred_path, '{}{}'.format(sample_name, suffix_ext))
-    import ipdb;ipdb.set_trace()
-    pred = rgb2grey(img_as_float(imread(sample_path)))
+    if 'bsds_for_jk' in sample_path:
+        pred = imread(sample_path)
+        print('max='+str(np.max(pred))+', min='+str(np.min(pred)))
+        pred *= 255
+    else:
+        pred = rgb2grey(img_as_float(imread(sample_path)))
     bnds = ds.boundaries(sample_name)
     tgt_shape = bnds[0].shape
     pred = pred[:tgt_shape[0], :tgt_shape[1]]
