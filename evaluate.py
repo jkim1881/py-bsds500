@@ -30,13 +30,20 @@ from skimage.io import imread
 # thresholds = thresholds.strip()
 
 zero_as_edges = True
-do_nms = True
+do_nms = False
 do_thinning = True
-bsds_or_multicue = 'multicue-boundaries' #'multicue-boundaries' #'bsds'
-bsds_path = '/media/data_cifs/pytorch_projects/datasets'# '/media/data_cifs/pytorch_projects/datasets'
-pred_path = '/media/data_cifs/pytorch_projects/MB_model_out_001' #'/media/data_cifs/pytorch_projects/MB_model_out_001' # '/media/data_cifs/pytorch_projects/model_out_001'
+# bsds_or_multicue = 'multicue-boundaries' #'multicue-boundaries' #'bsds'
+# bsds_path = '/media/data_cifs/pytorch_projects/datasets'# '/media/data_cifs/pytorch_projects/datasets'
+# pred_path = '/media/data_cifs/pytorch_projects/MB_model_out_001' #'/media/data_cifs/pytorch_projects/MB_model_out_001' # '/media/data_cifs/pytorch_projects/model_out_001'
+# val_test = 'test'
+# suffix_ext = '.jpg'
+# thresholds = 100
+
+bsds_or_multicue = 'bsds' #'multicue-boundaries' #'bsds'
+bsds_path = '/media/data_cifs/pytorch_projects/datasets'
+pred_path = '/media/data_cifs/cluster_projects/refactor_gammanet/bsds_for_jk/1'
 val_test = 'test'
-suffix_ext = '.jpg'
+suffix_ext = '.tiff'
 thresholds = 100
 
 
