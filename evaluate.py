@@ -79,6 +79,7 @@ def load_gt_boundaries(sample_name):
 
 def load_pred(sample_name):
     sample_path = os.path.join(pred_path, '{}{}'.format(sample_name, suffix_ext))
+    import ipdb;ipdb.set_trace()
     pred = rgb2grey(img_as_float(imread(sample_path)))
     bnds = ds.boundaries(sample_name)
     tgt_shape = bnds[0].shape
