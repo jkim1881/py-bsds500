@@ -41,7 +41,7 @@ do_thinning = True
 
 bsds_or_multicue = 'bsds' #'multicue-boundaries' #'bsds'
 bsds_path = '/media/data_cifs/pytorch_projects/datasets'
-pred_path = '/media/data_cifs/cluster_projects/refactor_gammanet/bsds_for_jk/10'
+pred_path = '/media/data_cifs/cluster_projects/refactor_gammanet/bsds_for_jk/100'
 val_test = 'test'
 suffix_ext = '.tiff'
 thresholds = 100
