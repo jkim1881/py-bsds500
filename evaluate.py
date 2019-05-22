@@ -44,7 +44,7 @@ bsds_path = '/media/data_cifs/pytorch_projects/datasets'
 pred_path = '/media/data_cifs/cluster_projects/refactor_gammanet/bsds_for_jk/100_aug_npy'
 val_test = 'test'
 suffix_ext = '.npy'
-thresholds = 100
+thresholds = 5
 
 
 try:
