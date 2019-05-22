@@ -41,7 +41,7 @@ do_thinning = True
 
 bsds_or_multicue = 'bsds' #'multicue-boundaries' #'bsds'
 bsds_path = '/media/data_cifs/pytorch_projects/datasets'
-pred_path = '/media/data_cifs/cluster_projects/refactor_gammanet/bsds_for_jk/1_npy'
+pred_path = '/media/data_cifs/cluster_projects/refactor_gammanet/bsds_for_jk/10_npy'
 val_test = 'test'
 suffix_ext = '.npy'
 thresholds = 100
@@ -83,7 +83,6 @@ def load_pred(sample_name):
         pred = np.load(sample_path) #expect [0,1]
         # import matplotlib.pyplot as plt;plt.imshow(pred);plt.show()
         print('max='+str(np.max(pred))+', min='+str(np.min(pred)))
-        # pred *= 255
     else:
         pred = rgb2grey(img_as_float(imread(sample_path)))
     bnds = ds.boundaries(sample_name)
