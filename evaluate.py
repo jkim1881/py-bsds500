@@ -44,7 +44,7 @@ bsds_path = '/media/data_cifs/pytorch_projects/datasets'
 pred_path = '/media/data_cifs/cluster_projects/refactor_gammanet/bsds_for_jk/100_aug_npy'
 val_test = 'test'
 suffix_ext = '.npy'
-thresholds = 5
+thresholds = 100
 
 
 try:
@@ -80,7 +80,7 @@ def load_gt_boundaries(sample_name):
 def load_pred(sample_name):
     sample_path = os.path.join(pred_path, '{}{}'.format(sample_name, suffix_ext))
     if 'bsds_for_jk' in sample_path:
-        pred = np.load(sample_path)
+        pred = np.load(sample_path) #expect [0,1]
         # import matplotlib.pyplot as plt;plt.imshow(pred);plt.show()
         print('max='+str(np.max(pred))+', min='+str(np.min(pred)))
         # pred *= 255
