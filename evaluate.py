@@ -83,7 +83,7 @@ def load_pred(sample_name):
         pred = np.load(sample_path)
         # import matplotlib.pyplot as plt;plt.imshow(pred);plt.show()
         print('max='+str(np.max(pred))+', min='+str(np.min(pred)))
-        pred *= 255
+        # pred *= 255
     else:
         pred = rgb2grey(img_as_float(imread(sample_path)))
     bnds = ds.boundaries(sample_name)
