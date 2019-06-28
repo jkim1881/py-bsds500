@@ -241,7 +241,7 @@ def pr_evaluation(thresholds, sample_names, load_gt_boundaries, load_pred,
         pred = load_pred(sample_name)
         if zero_as_edges:
             pred = 1-pred
-            # import ipdb;ipdb.set_trace()
+            import ipdb;ipdb.set_trace()
         if nms:
             grim, gphase = gradient.gradient(pred)
             pred_nms = nonmax_suppression.maximum(grim, gphase)
