@@ -42,10 +42,10 @@ do_thinning = False
 bsds_or_multicue = 'bsds' #'multicue-boundaries' #'bsds'
 bsds_path = '/media/data_cifs/pytorch_projects/datasets'
 pred_path = '/media/data_cifs/cluster_projects/refactor_gammanet/neurips_data/bsds_for_jk/100_hed_npy'
-# pred_path = '/media/data_cifs/pytorch_projects/model_out' #BDCN full
+pred_path = '/media/data_cifs/pytorch_projects/model_out' #BDCN full
 val_test = 'test'
 suffix_ext = '.npy'
-# suffix_ext = '.jpg'
+suffix_ext = '.jpg'
 thresholds = 100
 
 
