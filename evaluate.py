@@ -30,7 +30,7 @@ from skimage.io import imread
 # thresholds = thresholds.strip()
 
 zero_as_edges = True
-do_nms = True
+do_nms = False
 do_thinning = False
 # bsds_or_multicue = 'multicue-boundaries' #'multicue-boundaries' #'bsds'
 # bsds_path = '/media/data_cifs/pytorch_projects/datasets'# '/media/data_cifs/pytorch_projects/datasets'
