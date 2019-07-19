@@ -31,7 +31,7 @@ from skimage.io import imread
 
 zero_as_edges = True
 do_nms = False
-do_thinning = False
+do_thinning = True
 # bsds_or_multicue = 'multicue-boundaries' #'multicue-boundaries' #'bsds'
 # bsds_path = '/media/data_cifs/pytorch_projects/datasets'# '/media/data_cifs/pytorch_projects/datasets'
 # pred_path = '/media/data_cifs/pytorch_projects/MB_model_out_001' #'/media/data_cifs/pytorch_projects/MB_model_out_001' # '/media/data_cifs/pytorch_projects/model_out_001'
