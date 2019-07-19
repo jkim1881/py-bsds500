@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="342fb020-b4c6-40ab-8d61-7168cae1a4c2" name="Default" comment="" />
+    <list default="true" id="342fb020-b4c6-40ab-8d61-7168cae1a4c2" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bsds/evaluate_boundaries.py" afterPath="$PROJECT_DIR$/bsds/evaluate_boundaries.py" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,11 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="evaluate.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="evaluate.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/evaluate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="48" column="19" lean-forward="true" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+            <state relative-caret-position="417">
+              <caret line="45" column="56" lean-forward="false" selection-start-line="45" selection-start-column="56" selection-end-line="45" selection-end-column="56" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -64,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="evaluate_boundaries.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="evaluate_boundaries.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bsds/evaluate_boundaries.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="262" column="30" lean-forward="true" selection-start-line="262" selection-start-column="30" selection-end-line="262" selection-end-column="30" />
+            <state relative-caret-position="306">
+              <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="119" selection-end-column="16" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
               </folding>
@@ -89,7 +92,7 @@
       <file leaf-file-name="thin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bsds/thin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2760">
+            <state relative-caret-position="-12">
               <caret line="184" column="4" lean-forward="false" selection-start-line="184" selection-start-column="4" selection-end-line="184" selection-end-column="4" />
               <folding />
             </state>
@@ -129,8 +132,8 @@
       <find>boundaries</find>
       <find>loadmat</find>
       <find>pr_evaluation</find>
-      <find>apply_thinning</find>
       <find>ipdb</find>
+      <find>apply_thinning</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -144,8 +147,8 @@
         <option value="$PROJECT_DIR$/canny_edge/nonmax_suppression.py" />
         <option value="$PROJECT_DIR$/bsds/bsds_dataset.py" />
         <option value="$PROJECT_DIR$/plot_results.py" />
-        <option value="$PROJECT_DIR$/bsds/evaluate_boundaries.py" />
         <option value="$PROJECT_DIR$/evaluate.py" />
+        <option value="$PROJECT_DIR$/bsds/evaluate_boundaries.py" />
       </list>
     </option>
   </component>
@@ -661,14 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bsds/thin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2760">
-          <caret line="184" column="4" lean-forward="false" selection-start-line="184" selection-start-column="4" selection-end-line="184" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Python/2.7/lib/python/site-packages/IPython/core/interactiveshell.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-87">
@@ -752,22 +747,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bsds/evaluate_boundaries.py">
+    <entry file="file://$PROJECT_DIR$/evaluate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="262" column="30" lean-forward="true" selection-start-line="262" selection-start-column="30" selection-end-line="262" selection-end-column="30" />
+        <state relative-caret-position="417">
+          <caret line="45" column="56" lean-forward="false" selection-start-line="45" selection-start-column="56" selection-end-line="45" selection-end-column="56" />
           <folding>
-            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/evaluate.py">
+    <entry file="file://$PROJECT_DIR$/bsds/thin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="48" column="19" lean-forward="true" selection-start-line="48" selection-start-column="19" selection-end-line="48" selection-end-column="19" />
+        <state relative-caret-position="-12">
+          <caret line="184" column="4" lean-forward="false" selection-start-line="184" selection-start-column="4" selection-end-line="184" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bsds/evaluate_boundaries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="119" selection-end-column="16" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
