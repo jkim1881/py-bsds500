@@ -32,23 +32,20 @@ from skimage.io import imread
 zero_as_edges = True
 do_nms = True
 do_thinning = False
-# bsds_or_multicue = 'multicue-boundaries' #'multicue-boundaries' #'bsds'
-# bsds_path = '/media/data_cifs/pytorch_projects/datasets'# '/media/data_cifs/pytorch_projects/datasets'
-# pred_path = '/media/data_cifs/pytorch_projects/MB_model_out_001' #'/media/data_cifs/pytorch_projects/MB_model_out_001' # '/media/data_cifs/pytorch_projects/model_out_001'
-# val_test = 'test'
-# suffix_ext = '.jpg'
-# thresholds = 100
-
 bsds_or_multicue = 'bsds' #'multicue-boundaries' #'bsds'
-bsds_path = '/media/data_cifs/pytorch_projects/datasets'
+bsds_path = '/media/data_cifs/pytorch_projects/datasets'# '/media/data_cifs/pytorch_projects/datasets'
+val_test = 'test'
+thresholds = 100
+
+pred_path = '/media/data_cifs/pytorch_projects/model_out' #'/media/data_cifs/pytorch_projects/MB_model_out_001' # '/media/data_cifs/pytorch_projects/model_out_001'
+suffix_ext = '.jpg'
+
 # pred_path = '/media/data_cifs/cluster_projects/refactor_gammanet/neurips_data/bsds_for_jk/100_hed_npy' #gnet
-pred_path = '/media/data_cifs/cluster_projects/refactor_gammanet/bsds_for_jk/100_hed_v2' #gnet2sparse
+# pred_path = '/media/data_cifs/cluster_projects/refactor_gammanet/bsds_for_jk/100_hed_v2' #gnet2sparse
 # pred_path = '/media/data_cifs/cluster_projects/refactor_gammanet/bsds_for_jk/100_hed_lower_thresh'  #gnet3
 # pred_path = '/media/data_cifs/pytorch_projects/model_out' #BDCN full
-val_test = 'test'
-suffix_ext = '.npy'
+# suffix_ext = '.npy'
 # suffix_ext = '.jpg'
-thresholds = 100
 
 
 try:
