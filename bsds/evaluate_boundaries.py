@@ -114,9 +114,9 @@ def evaluate_boundaries(predicted_boundaries, gt_boundaries,
             predicted_boundaries_bin = thin.binary_thin(
                 predicted_boundaries_bin)
 
-        # import matplotlib.pyplot as plt
-        # plt.subplot(121);plt.imshow(predicted_boundaries_bin);plt.subplot(122);plt.imshow(gt_boundaries[0]);plt.show()
-        # continue
+        import matplotlib.pyplot as plt
+        plt.subplot(121);plt.imshow(predicted_boundaries_bin);plt.subplot(122);plt.imshow(gt_boundaries[0]);plt.show()
+        continue
 
         for gt in gt_boundaries:
             gt[gt >= 1] = 1 # to handle multicue gt data (65535)
