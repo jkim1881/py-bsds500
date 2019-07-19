@@ -114,7 +114,6 @@ def evaluate_boundaries(predicted_boundaries, gt_boundaries,
             predicted_boundaries_bin = thin.binary_thin(
                 predicted_boundaries_bin)
 
-        print(sample_name)
         import matplotlib.pyplot as plt
         plt.subplot(121);plt.imshow(predicted_boundaries_bin);plt.subplot(122);plt.imshow(gt[0]);plt.show()
         continue
