@@ -115,7 +115,7 @@ def evaluate_boundaries(predicted_boundaries, gt_boundaries,
                 predicted_boundaries_bin)
 
         import matplotlib.pyplot as plt
-        plt.subplot(121);plt.imshow(predicted_boundaries_bin);plt.subplot(122);plt.imshow(gt[0]);plt.show()
+        plt.subplot(121);plt.imshow(predicted_boundaries_bin);plt.subplot(122);plt.imshow(gt_boundaries[0]);plt.show()
         continue
 
         for gt in gt_boundaries:
