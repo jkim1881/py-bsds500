@@ -115,7 +115,7 @@ def evaluate_boundaries(predicted_boundaries, gt_boundaries,
                 predicted_boundaries_bin)
 
         if True:
-            grim, gphase = gradient.gradient(pred)
+            grim, gphase = gradient.gradient(predicted_boundaries_bin_thn)
             pred_nms = nonmax_suppression.maximum(grim, gphase)
             pred_nms /= np.max(pred_nms) # range correction
 
