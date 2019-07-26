@@ -111,7 +111,7 @@ def evaluate_boundaries(predicted_boundaries, gt_boundaries,
         acc_prec = np.zeros(predicted_boundaries_bin.shape, dtype=bool)
 
         if apply_thinning:
-            predicted_boundaries_bin = thin.binary_thin(
+            predicted_boundaries_bin_thn = thin.binary_thin(
                 predicted_boundaries_bin)
 
         if True:
@@ -121,14 +121,14 @@ def evaluate_boundaries(predicted_boundaries, gt_boundaries,
 
         import matplotlib.pyplot as plt
         plt.subplot(121);plt.imshow(pred_nms);
-        plt.subplot(121);plt.imshow(predicted_boundaries_bin);
+        plt.subplot(121);plt.imshow(predicted_boundaries_bin_thn);
         plt.subplot(122);plt.imshow(gt_boundaries[0]);plt.show()
         continue
 
         for gt in gt_boundaries:
             gt[gt >= 1] = 1 # to handle multicue gt data (65535)
             match1, match2, cost, oc = correspond_pixels.correspond_pixels(
-                predicted_boundaries_bin, gt, max_dist=max_dist
+                predicted_boundaries_bin_thn, gt, max_dist=max_dist
             )
             match1 = match1 > 0
             match2 = match2 > 0
