@@ -122,9 +122,9 @@ def evaluate_boundaries(predicted_boundaries, gt_boundaries,
             pred_nms /= np.max(pred_nms) # range correction
 
         import matplotlib.pyplot as plt
-        plt.subplot(121);plt.imshow(pred_nms);
-        plt.subplot(121);plt.imshow(predicted_boundaries_bin_thn);
-        plt.subplot(122);plt.imshow(gt_boundaries[0]);plt.show()
+        plt.subplot(131);plt.imshow(pred_nms);
+        plt.subplot(132);plt.imshow(predicted_boundaries_bin_thn);
+        plt.subplot(133);plt.imshow(gt_boundaries[0]);plt.show()
         continue
 
         for gt in gt_boundaries:
