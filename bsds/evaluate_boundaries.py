@@ -113,6 +113,8 @@ def evaluate_boundaries(predicted_boundaries, gt_boundaries,
         if apply_thinning:
             predicted_boundaries_bin_thn = thin.binary_thin(
                 predicted_boundaries_bin)
+        else:
+            predicted_boundaries_bin_thn = predicted_boundaries_bin
 
         if True:
             grim, gphase = gradient.gradient(predicted_boundaries_bin_thn)
