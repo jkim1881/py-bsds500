@@ -115,18 +115,18 @@ def evaluate_boundaries(predicted_boundaries, gt_boundaries,
                 predicted_boundaries_bin)
         else:
             predicted_boundaries_bin_thn = predicted_boundaries_bin
+        #
+        # if True: # apply nms to non-thinned map
+        #     grim, gphase = gradient.gradient(predicted_boundaries_bin)
+        #     pred_nms = nonmax_suppression.maximum(grim, gphase)
+        #     pred_nms /= np.max(pred_nms) # range correction
 
-        if True:
-            grim, gphase = gradient.gradient(predicted_boundaries_bin)
-            pred_nms = nonmax_suppression.maximum(grim, gphase)
-            pred_nms /= np.max(pred_nms) # range correction
-
-        import matplotlib.pyplot as plt
-        plt.subplot(131);plt.imshow(pred_nms, cmap='gray')
-        plt.subplot(132);plt.imshow(predicted_boundaries_bin_thn, cmap='gray')
-        plt.subplot(133);plt.imshow(gt_boundaries[0], cmap='gray')
-        plt.colorbar();plt.show()
-        continue
+        # import matplotlib.pyplot as plt
+        # plt.subplot(131);plt.imshow(pred_nms, cmap='gray')
+        # plt.subplot(132);plt.imshow(predicted_boundaries_bin_thn, cmap='gray')
+        # plt.subplot(133);plt.imshow(gt_boundaries[0], cmap='gray')
+        # plt.colorbar();plt.show()
+        # continue
 
         for gt in gt_boundaries:
             gt[gt >= 1] = 1 # to handle multicue gt data (65535)
@@ -262,7 +262,7 @@ def pr_evaluation(thresholds, sample_names, load_gt_boundaries, load_pred,
             pred = pred_nms
         gt_b = load_gt_boundaries(sample_name)
 
-        # print(sample_name)
+        print(sample_name)
         # import matplotlib.pyplot as plt
         # plt.subplot(121);plt.imshow(pred);plt.subplot(122);plt.imshow(gt_b[0]);plt.show()
         # continue
